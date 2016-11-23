@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;//Til að hægt sé að tengjast.
 using System.Windows.Forms;
 using System.Data;
-
+/* Sveinn Máni Jónsson
+ * 23.11.2016
+ * Lokaverkefni
+ */
 
 namespace FOR2B2U_Tverk7
 {
@@ -138,11 +141,11 @@ namespace FOR2B2U_Tverk7
                 CloseConnection();
             }
         }
-        public void Eyda(string id)
+        public void Eyda(string titill)
         {
             if (OpenConnection() == true)
             {
-                fyrirspurn = "Delete FROM kvikmyndir where ID='" + id + "'";
+                fyrirspurn = "Delete FROM kvikmyndir where titill='" + titill + "'";
                 nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
                 nySQLskipun.ExecuteNonQuery();
                 CloseConnection();

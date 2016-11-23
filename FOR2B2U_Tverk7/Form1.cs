@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
+/* Sveinn Máni Jónsson
+ * 23.11.2016
+ * Lokaverkefni
+ */
 namespace FOR2B2U_Tverk7
 {
     
@@ -85,25 +87,28 @@ namespace FOR2B2U_Tverk7
             int intSelectedIndex = lvTafla.SelectedIndices[0];
             if (intSelectedIndex >= 0)
             {
-                tbTitill.Text = lvTafla.SelectedItems[2].SubItems[2].Text;
-                /*tbLeikstjori.Text = lvTafla.SelectedItems[2].SubItems[2].Text;
-                tbUtgefandi.Text = lvTafla.SelectedItems[3].SubItems[3].Text;
-                tbAr.Text = lvTafla.SelectedItems[4].SubItems[4].Text;
-                tbFlokkur.Text = lvTafla.SelectedItems[5].SubItems[5].Text;*/
+                tbTitill.Text = lvTafla.SelectedItems[0].SubItems[1].Text;
+                tbLeikstjori.Text = lvTafla.SelectedItems[0].SubItems[2].Text;
+                tbUtgefandi.Text = lvTafla.SelectedItems[0].SubItems[3].Text;
+                tbAr.Text = lvTafla.SelectedItems[0].SubItems[4].Text;
+                tbFlokkur.Text = lvTafla.SelectedItems[0].SubItems[5].Text;
             }
-        }
-
-        private void btSyna_Click(object sender, EventArgs e)
-        {
-            
-        }
+        }    
 
         private void btSkra_Click(object sender, EventArgs e)
         {
             gagnagrunnur.SettInnSqlToflu(tbSkraTitill.Text, tbSkraLeikstjori.Text, tbSkraUtgefandi.Text, tbSkraAr.Text, cbSkraFlokkur.Text);
         }
 
-               
+        private void btUppfaera_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btEyda_Click(object sender, EventArgs e)
+        {
+            gagnagrunnur.Eyda(tbTitill.Text);
+        }               
         
         /*private void lbOutput_SelectedIndexChanged(object sender, EventArgs e)
         {
