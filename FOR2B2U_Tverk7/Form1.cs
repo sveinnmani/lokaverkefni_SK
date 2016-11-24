@@ -34,11 +34,11 @@ namespace FOR2B2U_Tverk7
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {            
             lvTafla.Columns.Add("ID", 50);
             lvTafla.Columns.Add("Titill", 180);
             lvTafla.Columns.Add("Leikstjóri", 180);
-            lvTafla.Columns.Add("Útgefandi", 180);
+            lvTafla.Columns.Add("Framleiðslufyrirtæki", 180);
             lvTafla.Columns.Add("Ár", 40);
             lvTafla.Columns.Add("Flokkur", 100);
 
@@ -97,7 +97,13 @@ namespace FOR2B2U_Tverk7
 
         private void btSkra_Click(object sender, EventArgs e)
         {
-            gagnagrunnur.SettInnSqlToflu(tbSkraTitill.Text, tbSkraLeikstjori.Text, tbSkraUtgefandi.Text, tbSkraAr.Text, cbSkraFlokkur.Text);
+            gagnagrunnur.SettInnSqlToflu(tbSkraTitill.Text, tbSkraLeikstjori.Text, tbSkraUtgefandi.Text, cbSkraAr.Text, cbSkraFlokkur.Text);
+            tbSkraTitill.Clear();
+            tbSkraLeikstjori.Clear();
+            tbSkraUtgefandi.Clear();
+            cbSkraAr = null;
+            cbSkraFlokkur = null;
+            
         }
 
         private void btUppfaera_Click(object sender, EventArgs e)
@@ -108,6 +114,146 @@ namespace FOR2B2U_Tverk7
         private void btEyda_Click(object sender, EventArgs e)
         {
             gagnagrunnur.Eyda(tbTitill.Text);
+        }
+
+        private void btFlokkaFlokk_Click(object sender, EventArgs e)//Flokka ListView eftir flokk mynda
+        {
+            string mynd = cbFlokkaFlokk.Text;
+            lvTafla.Clear();
+            lvTafla.Columns.Add("ID", 50);
+            lvTafla.Columns.Add("Titill", 180);
+            lvTafla.Columns.Add("Leikstjóri", 180);
+            lvTafla.Columns.Add("Framleiðslufyrirtæki", 180);
+            lvTafla.Columns.Add("Ár", 40);
+            lvTafla.Columns.Add("Flokkur", 100);
+
+            List<string> linur = new List<string>();
+            string[] arr = new string[6];
+
+            ListViewItem itm;
+
+            try
+            {
+                linur = gagnagrunnur.LesaUtFlokk(mynd);
+
+                foreach (string lin in linur)
+                {
+                    string[] linaUrLista = lin.Split(':');
+                    string ID = linaUrLista[0];
+                    string titill = linaUrLista[1];
+                    string leikstjori = linaUrLista[2];
+                    string utgefandi = linaUrLista[3];
+                    string ar = linaUrLista[4];
+                    string flokkur = linaUrLista[5];
+
+                    arr[0] = ID;
+                    arr[1] = titill;
+                    arr[2] = leikstjori;
+                    arr[3] = utgefandi;
+                    arr[4] = ar;
+                    arr[5] = flokkur;
+
+                    itm = new ListViewItem(arr);
+                    lvTafla.Items.Add(itm);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btFlokkaAr_Click(object sender, EventArgs e)//Flokka ListView eftir árgerð
+        {
+            string argerd = cbFlokkaAr.Text;
+            lvTafla.Clear();
+            lvTafla.Columns.Add("ID", 50);
+            lvTafla.Columns.Add("Titill", 180);
+            lvTafla.Columns.Add("Leikstjóri", 180);
+            lvTafla.Columns.Add("Framleiðslufyrirtæki", 180);
+            lvTafla.Columns.Add("Ár", 40);
+            lvTafla.Columns.Add("Flokkur", 100);
+
+            List<string> linur = new List<string>();
+            string[] arr = new string[6];
+
+            ListViewItem itm;
+
+            try
+            {
+                linur = gagnagrunnur.LesaUtAr(argerd);
+
+                foreach (string lin in linur)
+                {
+                    string[] linaUrLista = lin.Split(':');
+                    string ID = linaUrLista[0];
+                    string titill = linaUrLista[1];
+                    string leikstjori = linaUrLista[2];
+                    string utgefandi = linaUrLista[3];
+                    string ar = linaUrLista[4];
+                    string flokkur = linaUrLista[5];
+
+                    arr[0] = ID;
+                    arr[1] = titill;
+                    arr[2] = leikstjori;
+                    arr[3] = utgefandi;
+                    arr[4] = ar;
+                    arr[5] = flokkur;
+
+                    itm = new ListViewItem(arr);
+                    lvTafla.Items.Add(itm);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            lvTafla.Clear();
+            lvTafla.Columns.Add("ID", 50);
+            lvTafla.Columns.Add("Titill", 180);
+            lvTafla.Columns.Add("Leikstjóri", 180);
+            lvTafla.Columns.Add("Framleiðslufyrirtæki", 180);
+            lvTafla.Columns.Add("Ár", 40);
+            lvTafla.Columns.Add("Flokkur", 100);
+
+            List<string> linur = new List<string>();
+            string[] arr = new string[6];
+
+            ListViewItem itm;
+
+            try
+            {
+                linur = gagnagrunnur.LesaUt();
+
+                foreach (string lin in linur)
+                {
+                    string[] linaUrLista = lin.Split(':');
+                    string ID = linaUrLista[0];
+                    string titill = linaUrLista[1];
+                    string leikstjori = linaUrLista[2];
+                    string utgefandi = linaUrLista[3];
+                    string ar = linaUrLista[4];
+                    string flokkur = linaUrLista[5];
+
+                    arr[0] = ID;
+                    arr[1] = titill;
+                    arr[2] = leikstjori;
+                    arr[3] = utgefandi;
+                    arr[4] = ar;
+                    arr[5] = flokkur;
+
+                    itm = new ListViewItem(arr);
+                    lvTafla.Items.Add(itm);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }               
         
         /*private void lbOutput_SelectedIndexChanged(object sender, EventArgs e)

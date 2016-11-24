@@ -96,6 +96,52 @@ namespace FOR2B2U_Tverk7
             }
             return Faerslur;
         }
+        public List<string> LesaUtFlokk(string mynd)
+        {
+            List<string> Faerslur = new List<string>();
+            string lina = null;
+            if (OpenConnection() == true)
+            {
+                fyrirspurn = "SELECT ID, titill, leikstjori, utgefandi, ar, flokkur FROM kvikmyndir WHERE flokkur=" + "'" + mynd + "'";
+                nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
+                sqllesari = nySQLskipun.ExecuteReader();
+                while (sqllesari.Read())
+                {
+                    for (int i = 0; i < sqllesari.FieldCount; i++)
+                    {
+                        lina += (sqllesari.GetValue(i).ToString()) + ":";
+                    }
+                    Faerslur.Add(lina);
+                    lina = null;
+                }
+                CloseConnection();
+                return Faerslur;
+            }
+            return Faerslur;
+        }
+        public List<string> LesaUtAr(string ar)
+        {
+            List<string> Faerslur = new List<string>();
+            string lina = null;
+            if (OpenConnection() == true)
+            {
+                fyrirspurn = "SELECT ID, titill, leikstjori, utgefandi, ar, flokkur FROM kvikmyndir WHERE ar=" + "'" + ar + "'";
+                nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
+                sqllesari = nySQLskipun.ExecuteReader();
+                while (sqllesari.Read())
+                {
+                    for (int i = 0; i < sqllesari.FieldCount; i++)
+                    {
+                        lina += (sqllesari.GetValue(i).ToString()) + ":";
+                    }
+                    Faerslur.Add(lina);
+                    lina = null;
+                }
+                CloseConnection();
+                return Faerslur;
+            }
+            return Faerslur;
+        }
         /*Þessi aðferð les úr SQL gagnagrunni allar færslu og birtir í viðeigandi töflu*/
         public List<string> LesautSQLToflu()
         {

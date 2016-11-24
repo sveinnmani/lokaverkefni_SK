@@ -32,15 +32,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbSkraFlokkur = new System.Windows.Forms.ComboBox();
             this.btSkra = new System.Windows.Forms.Button();
-            this.tbSkraAr = new System.Windows.Forms.TextBox();
             this.tbSkraUtgefandi = new System.Windows.Forms.TextBox();
             this.tbSkraLeikstjori = new System.Windows.Forms.TextBox();
             this.tbSkraTitill = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btEyda = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tb = new System.Windows.Forms.TextBox();
             this.btUppfaera = new System.Windows.Forms.Button();
             this.lvTafla = new System.Windows.Forms.ListView();
             this.tbLeikstjori = new System.Windows.Forms.TextBox();
@@ -48,11 +47,23 @@
             this.tbUtgefandi = new System.Windows.Forms.TextBox();
             this.tbTitill = new System.Windows.Forms.TextBox();
             this.tbAr = new System.Windows.Forms.TextBox();
-            this.btEyda = new System.Windows.Forms.Button();
+            this.cbFlokkaFlokk = new System.Windows.Forms.ComboBox();
+            this.btFlokkaFlokk = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbFlokkaAr = new System.Windows.Forms.ComboBox();
+            this.btFlokkaAr = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btRefresh = new System.Windows.Forms.Button();
+            this.cbSkraAr = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,9 +79,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbSkraAr);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.cbSkraFlokkur);
             this.tabPage1.Controls.Add(this.btSkra);
-            this.tabPage1.Controls.Add(this.tbSkraAr);
             this.tabPage1.Controls.Add(this.tbSkraUtgefandi);
             this.tabPage1.Controls.Add(this.tbSkraLeikstjori);
             this.tabPage1.Controls.Add(this.tbSkraTitill);
@@ -79,52 +95,46 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1386, 639);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Skrá Nýja Mynd";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // cbSkraFlokkur
             // 
+            this.cbSkraFlokkur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSkraFlokkur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSkraFlokkur.FormattingEnabled = true;
             this.cbSkraFlokkur.Items.AddRange(new object[] {
             "Hasar",
             "Ævintýri",
             "Gaman",
+            "Teiknimynd",
             "Glæpa",
             "Drama",
             "Fantasía",
             "Söguleg",
             "Hrollvekja",
             "Rómantík",
-            "Spennutryllir",
-            ""});
-            this.cbSkraFlokkur.Location = new System.Drawing.Point(189, 267);
+            "Spennutryllir"});
+            this.cbSkraFlokkur.Location = new System.Drawing.Point(209, 267);
             this.cbSkraFlokkur.Name = "cbSkraFlokkur";
             this.cbSkraFlokkur.Size = new System.Drawing.Size(214, 28);
             this.cbSkraFlokkur.TabIndex = 6;
             // 
             // btSkra
             // 
-            this.btSkra.Location = new System.Drawing.Point(423, 141);
+            this.btSkra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSkra.Location = new System.Drawing.Point(443, 138);
             this.btSkra.Name = "btSkra";
-            this.btSkra.Size = new System.Drawing.Size(106, 23);
+            this.btSkra.Size = new System.Drawing.Size(103, 26);
             this.btSkra.TabIndex = 5;
-            this.btSkra.Text = "button1";
+            this.btSkra.Text = "Skrá Mynd";
             this.btSkra.UseVisualStyleBackColor = true;
             this.btSkra.Click += new System.EventHandler(this.btSkra_Click);
-            // 
-            // tbSkraAr
-            // 
-            this.tbSkraAr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSkraAr.Location = new System.Drawing.Point(189, 234);
-            this.tbSkraAr.Name = "tbSkraAr";
-            this.tbSkraAr.Size = new System.Drawing.Size(214, 26);
-            this.tbSkraAr.TabIndex = 3;
             // 
             // tbSkraUtgefandi
             // 
             this.tbSkraUtgefandi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSkraUtgefandi.Location = new System.Drawing.Point(189, 202);
+            this.tbSkraUtgefandi.Location = new System.Drawing.Point(209, 202);
             this.tbSkraUtgefandi.Name = "tbSkraUtgefandi";
             this.tbSkraUtgefandi.Size = new System.Drawing.Size(214, 26);
             this.tbSkraUtgefandi.TabIndex = 2;
@@ -132,7 +142,7 @@
             // tbSkraLeikstjori
             // 
             this.tbSkraLeikstjori.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSkraLeikstjori.Location = new System.Drawing.Point(189, 170);
+            this.tbSkraLeikstjori.Location = new System.Drawing.Point(209, 170);
             this.tbSkraLeikstjori.Name = "tbSkraLeikstjori";
             this.tbSkraLeikstjori.Size = new System.Drawing.Size(214, 26);
             this.tbSkraLeikstjori.TabIndex = 1;
@@ -140,13 +150,14 @@
             // tbSkraTitill
             // 
             this.tbSkraTitill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSkraTitill.Location = new System.Drawing.Point(189, 138);
+            this.tbSkraTitill.Location = new System.Drawing.Point(209, 138);
             this.tbSkraTitill.Name = "tbSkraTitill";
             this.tbSkraTitill.Size = new System.Drawing.Size(214, 26);
             this.tbSkraTitill.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btRefresh);
             this.tabPage2.Controls.Add(this.btEyda);
             this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Controls.Add(this.btUppfaera);
@@ -161,8 +172,18 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1386, 639);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Skoða Myndir";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btEyda
+            // 
+            this.btEyda.Location = new System.Drawing.Point(1013, 503);
+            this.btEyda.Name = "btEyda";
+            this.btEyda.Size = new System.Drawing.Size(83, 23);
+            this.btEyda.TabIndex = 10;
+            this.btEyda.Text = "Eyða";
+            this.btEyda.UseVisualStyleBackColor = true;
+            this.btEyda.Click += new System.EventHandler(this.btEyda_Click);
             // 
             // tabControl2
             // 
@@ -171,37 +192,33 @@
             this.tabControl2.Location = new System.Drawing.Point(7, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1373, 331);
+            this.tabControl2.Size = new System.Drawing.Size(632, 309);
             this.tabControl2.TabIndex = 2;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.btFlokkaFlokk);
+            this.tabPage3.Controls.Add(this.cbFlokkaFlokk);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1365, 305);
+            this.tabPage3.Size = new System.Drawing.Size(624, 283);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Flokkur";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.tb);
+            this.tabPage4.Controls.Add(this.btFlokkaAr);
+            this.tabPage4.Controls.Add(this.cbFlokkaAr);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1365, 305);
+            this.tabPage4.Size = new System.Drawing.Size(624, 283);
             this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Ár";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tb
-            // 
-            this.tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb.Location = new System.Drawing.Point(44, 56);
-            this.tb.Name = "tb";
-            this.tb.Size = new System.Drawing.Size(214, 26);
-            this.tb.TabIndex = 1;
             // 
             // btUppfaera
             // 
@@ -217,9 +234,9 @@
             // 
             this.lvTafla.FullRowSelect = true;
             this.lvTafla.GridLines = true;
-            this.lvTafla.Location = new System.Drawing.Point(3, 343);
+            this.lvTafla.Location = new System.Drawing.Point(645, 28);
             this.lvTafla.Name = "lvTafla";
-            this.lvTafla.Size = new System.Drawing.Size(718, 287);
+            this.lvTafla.Size = new System.Drawing.Size(735, 287);
             this.lvTafla.TabIndex = 3;
             this.lvTafla.UseCompatibleStateImageBehavior = false;
             this.lvTafla.View = System.Windows.Forms.View.Details;
@@ -265,15 +282,387 @@
             this.tbAr.Size = new System.Drawing.Size(165, 26);
             this.tbAr.TabIndex = 7;
             // 
-            // btEyda
+            // cbFlokkaFlokk
             // 
-            this.btEyda.Location = new System.Drawing.Point(1013, 503);
-            this.btEyda.Name = "btEyda";
-            this.btEyda.Size = new System.Drawing.Size(83, 23);
-            this.btEyda.TabIndex = 10;
-            this.btEyda.Text = "Eyða";
-            this.btEyda.UseVisualStyleBackColor = true;
-            this.btEyda.Click += new System.EventHandler(this.btEyda_Click);
+            this.cbFlokkaFlokk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFlokkaFlokk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFlokkaFlokk.FormattingEnabled = true;
+            this.cbFlokkaFlokk.Items.AddRange(new object[] {
+            "Hasar",
+            "Ævintýri",
+            "Gaman",
+            "Teiknimynd",
+            "Glæpa",
+            "Drama",
+            "Fantasía",
+            "Söguleg",
+            "Hrollvekja",
+            "Rómantík",
+            "Spennutryllir"});
+            this.cbFlokkaFlokk.Location = new System.Drawing.Point(136, 106);
+            this.cbFlokkaFlokk.Name = "cbFlokkaFlokk";
+            this.cbFlokkaFlokk.Size = new System.Drawing.Size(182, 28);
+            this.cbFlokkaFlokk.TabIndex = 0;
+            // 
+            // btFlokkaFlokk
+            // 
+            this.btFlokkaFlokk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFlokkaFlokk.Location = new System.Drawing.Point(324, 106);
+            this.btFlokkaFlokk.Name = "btFlokkaFlokk";
+            this.btFlokkaFlokk.Size = new System.Drawing.Size(164, 28);
+            this.btFlokkaFlokk.TabIndex = 1;
+            this.btFlokkaFlokk.Text = "Leita";
+            this.btFlokkaFlokk.UseVisualStyleBackColor = true;
+            this.btFlokkaFlokk.Click += new System.EventHandler(this.btFlokkaFlokk_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 109);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(124, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Flokka eftir flokk";
+            // 
+            // cbFlokkaAr
+            // 
+            this.cbFlokkaAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFlokkaAr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFlokkaAr.FormattingEnabled = true;
+            this.cbFlokkaAr.Items.AddRange(new object[] {
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010",
+            "2009",
+            "2008",
+            "2007",
+            "2006",
+            "2005",
+            "2004",
+            "2003",
+            "2002",
+            "2001",
+            "2000",
+            "1999",
+            "1998",
+            "1997",
+            "1996",
+            "1995",
+            "1994",
+            "1993",
+            "1992",
+            "1991",
+            "1990",
+            "1989",
+            "1988",
+            "1987",
+            "1986",
+            "1985",
+            "1984",
+            "1983",
+            "1982",
+            "1981",
+            "1980",
+            "1979",
+            "1978",
+            "1977",
+            "1976",
+            "1975",
+            "1974",
+            "1973",
+            "1972",
+            "1971",
+            "1970",
+            "1969",
+            "1968",
+            "1967",
+            "1966",
+            "1965",
+            "1964",
+            "1963",
+            "1962",
+            "1961",
+            "1960",
+            "1959",
+            "1958",
+            "1957",
+            "1956",
+            "1955",
+            "1954",
+            "1953",
+            "1952",
+            "1951",
+            "1950",
+            "1949",
+            "1948",
+            "1947",
+            "1946",
+            "1945",
+            "1944",
+            "1943",
+            "1942",
+            "1941",
+            "1940",
+            "1939",
+            "1938",
+            "1937",
+            "1936",
+            "1935",
+            "1934",
+            "1933",
+            "1932",
+            "1931",
+            "1930",
+            "1929",
+            "1928",
+            "1927",
+            "1926",
+            "1925",
+            "1924",
+            "1923",
+            "1922",
+            "1921",
+            "1920",
+            "1919",
+            "1918",
+            "1917",
+            "1916",
+            "1915",
+            "1914",
+            "1913",
+            "1912",
+            "1911",
+            "1910",
+            "1909",
+            "1908",
+            "1907",
+            "1906",
+            "1905",
+            "1904",
+            "1903",
+            "1902",
+            "1901",
+            "1900",
+            "1899",
+            "1898",
+            "1897",
+            "1896",
+            "1895"});
+            this.cbFlokkaAr.Location = new System.Drawing.Point(117, 89);
+            this.cbFlokkaAr.Name = "cbFlokkaAr";
+            this.cbFlokkaAr.Size = new System.Drawing.Size(68, 28);
+            this.cbFlokkaAr.TabIndex = 0;
+            // 
+            // btFlokkaAr
+            // 
+            this.btFlokkaAr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFlokkaAr.Location = new System.Drawing.Point(192, 89);
+            this.btFlokkaAr.Name = "btFlokkaAr";
+            this.btFlokkaAr.Size = new System.Drawing.Size(75, 28);
+            this.btFlokkaAr.TabIndex = 1;
+            this.btFlokkaAr.Text = "Leita";
+            this.btFlokkaAr.UseVisualStyleBackColor = true;
+            this.btFlokkaAr.Click += new System.EventHandler(this.btFlokkaAr_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Titill myndarinnar:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(90, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Nafn leikstjóra:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 205);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(196, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Nafn Framleiðslufyrirtækis:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(127, 237);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Útgáfuár:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(138, 270);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Flokkur:";
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRefresh.Location = new System.Drawing.Point(645, 321);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(82, 28);
+            this.btRefresh.TabIndex = 11;
+            this.btRefresh.Text = "Refresh";
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
+            // cbSkraAr
+            // 
+            this.cbSkraAr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSkraAr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSkraAr.FormattingEnabled = true;
+            this.cbSkraAr.Items.AddRange(new object[] {
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010",
+            "2009",
+            "2008",
+            "2007",
+            "2006",
+            "2005",
+            "2004",
+            "2003",
+            "2002",
+            "2001",
+            "2000",
+            "1999",
+            "1998",
+            "1997",
+            "1996",
+            "1995",
+            "1994",
+            "1993",
+            "1992",
+            "1991",
+            "1990",
+            "1989",
+            "1988",
+            "1987",
+            "1986",
+            "1985",
+            "1984",
+            "1983",
+            "1982",
+            "1981",
+            "1980",
+            "1979",
+            "1978",
+            "1977",
+            "1976",
+            "1975",
+            "1974",
+            "1973",
+            "1972",
+            "1971",
+            "1970",
+            "1969",
+            "1968",
+            "1967",
+            "1966",
+            "1965",
+            "1964",
+            "1963",
+            "1962",
+            "1961",
+            "1960",
+            "1959",
+            "1958",
+            "1957",
+            "1956",
+            "1955",
+            "1954",
+            "1953",
+            "1952",
+            "1951",
+            "1950",
+            "1949",
+            "1948",
+            "1947",
+            "1946",
+            "1945",
+            "1944",
+            "1943",
+            "1942",
+            "1941",
+            "1940",
+            "1939",
+            "1938",
+            "1937",
+            "1936",
+            "1935",
+            "1934",
+            "1933",
+            "1932",
+            "1931",
+            "1930",
+            "1929",
+            "1928",
+            "1927",
+            "1926",
+            "1925",
+            "1924",
+            "1923",
+            "1922",
+            "1921",
+            "1920",
+            "1919",
+            "1918",
+            "1917",
+            "1916",
+            "1915",
+            "1914",
+            "1913",
+            "1912",
+            "1911",
+            "1910",
+            "1909",
+            "1908",
+            "1907",
+            "1906",
+            "1905",
+            "1904",
+            "1903",
+            "1902",
+            "1901",
+            "1900",
+            "1899",
+            "1898",
+            "1897",
+            "1896",
+            "1895"});
+            this.cbSkraAr.Location = new System.Drawing.Point(209, 233);
+            this.cbSkraAr.Name = "cbSkraAr";
+            this.cbSkraAr.Size = new System.Drawing.Size(68, 28);
+            this.cbSkraAr.TabIndex = 12;
             // 
             // Form1
             // 
@@ -290,8 +679,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,13 +702,23 @@
         private System.Windows.Forms.TextBox tbTitill;
         private System.Windows.Forms.Button btUppfaera;
         private System.Windows.Forms.TextBox tbSkraTitill;
-        private System.Windows.Forms.TextBox tbSkraAr;
         private System.Windows.Forms.TextBox tbSkraUtgefandi;
         private System.Windows.Forms.TextBox tbSkraLeikstjori;
         private System.Windows.Forms.Button btSkra;
         private System.Windows.Forms.ComboBox cbSkraFlokkur;
-        private System.Windows.Forms.TextBox tb;
         private System.Windows.Forms.Button btEyda;
+        private System.Windows.Forms.ComboBox cbFlokkaFlokk;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btFlokkaFlokk;
+        private System.Windows.Forms.ComboBox cbFlokkaAr;
+        private System.Windows.Forms.Button btFlokkaAr;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btRefresh;
+        private System.Windows.Forms.ComboBox cbSkraAr;
     }
 }
 
