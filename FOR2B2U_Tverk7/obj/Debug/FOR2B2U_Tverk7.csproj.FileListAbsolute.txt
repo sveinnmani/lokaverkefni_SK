@@ -25,3 +25,4 @@ C:\Users\2512982709\Desktop\lokaverkefni_SK-master\FOR2B2U_Tverk7\bin\Debug\FOR2
 C:\Users\2512982709\Desktop\lokaverkefni_SK-master\FOR2B2U_Tverk7\obj\Debug\FOR2B2U_Tverk7.Form1.resources
 C:\Users\2512982709\Desktop\lokaverkefni_SK-master\FOR2B2U_Tverk7\obj\Debug\FOR2B2U_Tverk7.Properties.Resources.resources
 C:\Users\2512982709\Desktop\lokaverkefni_SK-master\FOR2B2U_Tverk7\obj\Debug\FOR2B2U_Tverk7.csproj.GenerateResource.Cache
+C:\Users\2512982709\Desktop\lokaverkefni_SK-master\FOR2B2U_Tverk7\obj\Debug\FOR2B2U_Tverk7.csprojResolveAssemblyReference.cache

@@ -142,6 +142,29 @@ namespace FOR2B2U_Tverk7
             }
             return Faerslur;
         }
+        public List<string> FinnaMynd(string titill)
+        {
+            List<string> Faerslur = new List<string>();
+            string lina = null;
+            if (OpenConnection() == true)
+            {
+                fyrirspurn = "SELECT ID, titill, leikstjori, utgefandi, ar, flokkur FROM kvikmyndir WHERE titill=" + "'" + titill + "'";
+                nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
+                sqllesari = nySQLskipun.ExecuteReader();
+                while (sqllesari.Read())
+                {
+                    for (int i = 0; i < sqllesari.FieldCount; i++)
+                    {
+                        lina += (sqllesari.GetValue(i).ToString()) + ":";
+                    }
+                    Faerslur.Add(lina);
+                    lina = null;
+                }
+                CloseConnection();
+                return Faerslur;
+            }
+            return Faerslur;        
+        }
         /*Þessi aðferð les úr SQL gagnagrunni allar færslu og birtir í viðeigandi töflu*/
         public List<string> LesautSQLToflu()
         {
@@ -177,47 +200,26 @@ namespace FOR2B2U_Tverk7
                 CloseConnection();
             }
         }
-        public void Uppfaera(string titill, string leikstjori, string utgefandi, string ar, string flokkur)
+        public void Uppfaera(string ID, string titill, string leikstjori, string utgefandi, string ar, string flokkur)
         {
             if (OpenConnection() == true)
             {
-                fyrirspurn = "Update kvikmyndir set titill ='" + titill + "', leikstjori='" + leikstjori + "',utgefandi='" + utgefandi + "',ar='" + ar + "',flokkur='" + flokkur + "' where titill='" + titill + "'";
+                fyrirspurn = "Update kvikmyndir set titill ='" + titill + "', leikstjori='" + leikstjori + "',utgefandi='" + utgefandi + "',ar='" + ar + "',flokkur='" + flokkur + "' where ID='" + ID + "'";
                 nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
                 nySQLskipun.ExecuteNonQuery();
                 CloseConnection();
             }
         }
-        public void Eyda(string titill)
+        public void Eyda(string ID)
         {
             if (OpenConnection() == true)
             {
-                fyrirspurn = "Delete FROM kvikmyndir where titill='" + titill + "'";
+                fyrirspurn = "Delete FROM kvikmyndir where ID='" + ID + "'";
                 nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
                 nySQLskipun.ExecuteNonQuery();
                 CloseConnection();
             }
-        }
-        /*public string[] FinnaAkvedinOgSkilaTilBaka(string id)
-        {
-            string[] gogn = new string[4];
-            if (OpenConnection() == true)
-            {
-                fyrirspurn = "SELECT id_medlimur,nafn,netfang,simanumer FROM medlimur where id_medlimur='" + id + "'";
-                nySQLskipun = new MySqlCommand(fyrirspurn, sqltenging);
-                sqllesari = nySQLskipun.ExecuteReader();
-                while (sqllesari.Read())
-                {
-                    gogn[0] = sqllesari.GetValue(0).ToString();
-                    gogn[1] = sqllesari.GetValue(1).ToString();
-                    gogn[2] = sqllesari.GetValue(2).ToString();
-                    gogn[3] = sqllesari.GetValue(3).ToString();
-                }
-                sqllesari.Close();
-                CloseConnection();
-                return gogn;
-            }
-            return gogn;
-        }*/
+        }        
         /*public string FinnaEinstakling(string id)
         {
             string lina = null;

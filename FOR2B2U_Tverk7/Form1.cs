@@ -87,6 +87,7 @@ namespace FOR2B2U_Tverk7
             int intSelectedIndex = lvTafla.SelectedIndices[0];
             if (intSelectedIndex >= 0)
             {
+                tbID.Text = lvTafla.SelectedItems[0].SubItems[0].Text;
                 tbTitill.Text = lvTafla.SelectedItems[0].SubItems[1].Text;
                 tbLeikstjori.Text = lvTafla.SelectedItems[0].SubItems[2].Text;
                 tbUtgefandi.Text = lvTafla.SelectedItems[0].SubItems[3].Text;
@@ -108,12 +109,24 @@ namespace FOR2B2U_Tverk7
 
         private void btUppfaera_Click(object sender, EventArgs e)
         {
-
+            gagnagrunnur.Uppfaera(tbID.Text, tbTitill.Text, tbLeikstjori.Text, tbUtgefandi.Text, tbAr.Text, tbFlokkur.Text);
+            tbID.Text = null;
+            tbTitill.Text = null;
+            tbLeikstjori.Text= null;
+            tbUtgefandi.Text = null;
+            tbAr.Text = null;
+            tbFlokkur.Text = null;
         }
 
         private void btEyda_Click(object sender, EventArgs e)
         {
-            gagnagrunnur.Eyda(tbTitill.Text);
+            gagnagrunnur.Eyda(tbID.Text);
+            tbID.Text = null;
+            tbTitill.Text = null;
+            tbLeikstjori.Text = null;
+            tbUtgefandi.Text = null;
+            tbAr.Text = null;
+            tbFlokkur.Text = null;
         }
 
         private void btFlokkaFlokk_Click(object sender, EventArgs e)//Flokka ListView eftir flokk mynda
@@ -254,30 +267,12 @@ namespace FOR2B2U_Tverk7
             {
                 MessageBox.Show(ex.ToString());
             }
-        }               
-        
-        /*private void lbOutput_SelectedIndexChanged(object sender, EventArgs e)
+        }
+
+        private void btFlokkaTitill_Click(object sender, EventArgs e)
         {
-            if (lvTafla.SelectedIndex != -1)
-            {
-                string nafn = null;
-                string[] nafnid = null;
-                nafn = lvTafla.SelectedItem.ToString();
-
-                char split = ':';
-
-                nafnid = nafn.Split(split);
-                tbKennitalaBreyta.Text = nafnid[0];
-                tbNafnBreyta.Text = nafnid[1];
-                tbNetfangBreyta.Text = nafnid[2];
-                tbSimiBreyta.Text = nafnid[3];
-            }
-        }*/
-
-        
-
-        
-
-                
+            gagnagrunnur.FinnaMynd(tbFlokkaTitill.Text);
+            tbFlokkaTitill.Text = null;
+        }              
     }
 }
